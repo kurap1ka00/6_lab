@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -45,13 +46,22 @@ class LinkedList:
 
         self.head = new_head
 
+    def __str__(self):
+        result = ""
+        current_node = self.head
+        while current_node:
+            result += str(current_node.data) + " "
+            current_node = current_node.next
+        return result
+
+
 llist = LinkedList()
 llist.append(3)
 llist.append(1)
 llist.append(2)
 
 print("Before sorting:")
-llist.print_list()
+print(llist)
 
 llist.sort_list()
 
